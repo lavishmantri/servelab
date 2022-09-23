@@ -37,13 +37,8 @@ app.use(
     target: API_SERVICE_URL,
     changeOrigin: true,
     ws: true,
-    () => {
-      //save to mongo
-    }
   }),
 );
-
-
 
 // Start the Proxy
 app.listen(PORT, HOST, () => {
