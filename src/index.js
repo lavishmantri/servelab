@@ -13,6 +13,9 @@ const PORT = 4000;
 const HOST = 'localhost';
 const API_SERVICE_URL = 'https://jupyterhub.dev.markovml.com';
 
+app.get('/', (req, res) => {
+  res.json({ message: 'ok' });
+});
 // Info GET endpoint
 app.get('/info', (req, res, next) => {
   res.send(
