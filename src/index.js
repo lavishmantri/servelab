@@ -1,7 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
 const { createProxyMiddleware } = require('http-proxy-middleware');
-const { token } = require('morgan');
 
 const app = express();
 
@@ -9,9 +8,9 @@ const app = express();
 app.use(morgan('dev'));
 
 // Configuration
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 const HOST = 'localhost';
-const API_SERVICE_URL = 'https://jupyterhub.dev.markovml.com';
+const API_SERVICE_URL = 'https://jupyterhub.customers.markovml.com';
 
 app.get('/', (req, res) => {
   res.json({ message: 'ok' });
